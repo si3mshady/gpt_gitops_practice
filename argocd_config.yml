@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gpt-app
+  namespace: argocd
+spec:
+  destination:
+    namespace: elliott-argocd # target namespace for the application
+    server: https://kubernetes.default.svc # URL for the Kubernetes API server
+  source:
+    repoURL: https://github.com/si3mshady/gpt_gitops_practice.git # URL of the Git repository
+    targetRevision: HEAD # branch or tag to deploy
+    path: main # path within the Git repository to deploy
+  project: default # name of the project to use
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    automated:
+      prune: true # delete resources that are not defined in the Git repository
+      selfHeal: true # ensure that the desired state is always enforced

@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://github.com/si3mshady/gpt_gitops_practice.git # URL of the Git repository
     targetRevision: HEAD # branch or tag to deploy
-    path: /app # path within the Git repository to deploy
+    path: app # path within the Git repository to deploy
   project: default # name of the project to use
   syncPolicy:
     syncOptions:

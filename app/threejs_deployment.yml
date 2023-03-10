@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: react-app
-          image:  si3mshady/awsthree:2
+          image:  si3mshady/awsthree:1
           ports:
             - containerPort: 3000
         
